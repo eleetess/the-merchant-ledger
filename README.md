@@ -23,12 +23,15 @@
 - partition key id(string,each shopping list entry)
 - one sort key -ask thomas for opinion
 
-### Atrributes ( per item)
+### Atrributes ( per item) schema
 
-- id
-- name
-- desiredPrice
-- status( needed,found,bought)
+- id (string)
+- name(string)
+- desiredPrice(number)
+- status( needed,found,bought)(string)
+
+### fetch data from dynamodb
+
 - listAllItems("shoppingList")
 
 ## CRUD FUNCTIONS
