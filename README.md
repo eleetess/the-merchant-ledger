@@ -1,12 +1,39 @@
-# React + Vite
+# The Merchant Ledger
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Elder Scrolls Online theme app where user can keep track of items to purchase at trader's
 
-Currently, two official plugins are available:
+## Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create a list of items you want to buy (name, desired price).
 
-## Expanding the ESLint configuration
+- Mark items as “found” or “bought” (update).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Delete items when completed.
+
+- DynamoDB: Table ShoppingList.
+
+- Extras: Sort by price or filter “needed” vs “bought”. (filter feature)
+
+- Tests: Add shopping list item, toggle bought status, delete item.
+
+# DynamoDB setup
+
+## Table:ShoppingList
+
+- partition key id(string,each shopping list entry)
+- one sort key -ask thomas for opinion
+
+### Atrributes ( per item)
+
+- id
+- name
+- desiredPrice
+- status( needed,found,bought)
+- listAllItems("shoppingList")
+
+## CRUD FUNCTIONS
+
+- CREATE-add a item
+- READ- get items from the table
+- UPDATE- update status (needed,found,bought)
+- DELETE- remove item from list.
