@@ -18,7 +18,7 @@
 
 # DynamoDB setup
 
-## Table:ShoppingList
+## Table:name:ShoppingList
 
 - partition key id(string,each shopping list entry)
 - one sort key -ask thomas for opinion
