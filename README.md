@@ -2,7 +2,7 @@
 
 ### Elder Scrolls Online theme app where user can keep track of items to purchase at trader's
 
-## Features:
+## Features
 
 - Create a list of items you want to buy (name, desired price).
 
@@ -23,7 +23,7 @@
 - partition key id(string,each shopping list entry)
 - one sort key -ask thomas for opinion
 
-### Atrributes ( per item) schema
+### Attributes ( per item) schema
 
 - id (string)
 - name(string)
