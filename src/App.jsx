@@ -35,6 +35,12 @@ function App() {
     const { price, status } = itemToUpdate;
     console.log(itemToUpdate.id);
   };
+  const deleteShoppingListHandler = async (id) => {
+    await deleteItem("ShoppingList", { id });
+    fetchedItems((oldItems) => {
+      return oldItems.filter((itemObject) => itemObject.id !== id);
+    });
+  };
 
   return (
     <>
@@ -66,11 +72,19 @@ function App() {
             <li key={item.id}>
               {item.itemName} — {item.price} gold ({item.status})
               <button onClick={() => setItemToUpdate(item)}>Edit</button>
+              <button
+                className="beGone"
+                onClick={() => deleteShoppingListHandler(item.id)}
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ul>
       </main>
-      <footer></footer>
+      <footer>
+        <p>&copy; 2025 Dawnstar Dealers. All Rights Reserved.</p>
+      </footer>
     </>
   );
 }
