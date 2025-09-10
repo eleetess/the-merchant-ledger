@@ -1,1 +1,57 @@
+$color-bg-primary: #1a1a1a;     
+$color-bg-secondary: #2b2b2b;   
+$color-accent-gold: #d3ac2d;    
+$color-accent-silver: #c0c0c0;  
+$color-highlight: #4a90e2;      
+$color-danger: #8b0000;         
+$color-text-primary: #f5f5f5;   
+$color-text-muted: #9a9a9a; 
+$gradient-dark-gold: linear-gradient(
+  180deg,
+  #1a1a1a 0%,   // top: dark slate
+  #2b2b2b 50%,  // middle: deep gray
+  #3d2b1f 100%  // bottom: muted dark gold/brown
+);
 
+body{
+    background: $gradient-dark-gold;
+    background-image: url(https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-053c-61f7-a2ff-45e4abb49660/raw?se=2025-09-10T14%3A55%3A25Z&sp=r&sv=2024-08-04&sr=b&scid=75206188-699b-52b4-9991-766e190537b3&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-10T10%3A43%3A01Z&ske=2025-09-11T10%3A43%3A01Z&sks=b&skv=2024-08-04&sig=GUaBj%2B0rZ7ueVXYhXpe7XiQxHKPQuXwAcX7ZLseNEt0%3D);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Cinzel",serif;
+    
+    }
+
+    h2{
+        color: #05520c;
+        font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+    
+    form{
+        background-image: url(https://eso-hub.com/images/interactive-map/header-image.jpg);
+        background-size: cover;
+        height: 200px;
+        width: 100 px;
+        color: #941111;
+    }
+    button{
+       background-color: #023517;
+       color: #e0e9bf;
+
+        
+    }
+    ul{
+        color: #dbb229;
+        font-family: "Almendra", serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+    h1{
+        color:#d15b0c;
+       font-family: "UnifrakturCook", cursive;
+  font-weight: 700;
+  font-style: normal; 
+    }

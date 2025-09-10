@@ -6,6 +6,7 @@ import {
   updateItem,
   deleteItem,
 } from "./utils/dynamo";
+import Button from "@mui/material/Button";
 
 function App() {
   const [items, fetchedItems] = useState([]);
@@ -29,6 +30,11 @@ function App() {
     await createItem("ShoppingList", newItem);
     fetchedItems([...items, newItem]);
   };
+  const updateShoppingListHandler = async (event) => {
+    event.preventDefault();
+    const { price, status } = itemToUpdate;
+    console.log(itemToUpdate.id);
+  };
 
   return (
     <>
@@ -43,12 +49,14 @@ function App() {
           <br />
           <label>Price</label>
           <input type="number" name="desiredPrice" required />
+          <br />
           <label>Status</label>
           <select id="status" name="status">
             <option value="needed">Needed</option>
             <option value="found">Found</option>
             <option value="bought">Bought</option>
           </select>
+          <br />
           <button type="submit">Add to Ledger</button>
         </form>
         <h2>Trade Manifest</h2>
@@ -57,6 +65,7 @@ function App() {
           {items.map((item) => (
             <li key={item.id}>
               {item.itemName} — {item.price} gold ({item.status})
+              <button onClick={() => setItemToUpdate(item)}>Edit</button>
             </li>
           ))}
         </ul>

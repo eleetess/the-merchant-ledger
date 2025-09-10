@@ -13,6 +13,9 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.883.0",
     "@aws-sdk/lib-dynamodb": "^3.883.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.2",
     "aws-sdk-client-mock": "^4.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
