@@ -6,7 +6,6 @@ import {
   updateItem,
   deleteItem,
 } from "./utils/dynamo";
-import Button from "@mui/material/Button";
 
 function App() {
   const [items, fetchedItems] = useState([]);
@@ -58,9 +57,28 @@ function App() {
       <header>
         <h1>The Merchant Ledger</h1>
       </header>
+      <section className="hero">
+        <div className="hero-overlay">
+          <h1 className="hero-title">
+            “Greetings, traveler! Care to browse my wares?”
+          </h1>
+          <p className="hero-subtitle">
+            A trader’s scroll to track wares, treasures, and rare finds across
+            Tamriel.
+          </p>
+          <p className="hero-description">
+            Whether bartering in Alinor, haggling in Wayrest, or prowling the
+            <br />
+            Grand Exchange of Vivec City — this ledger ensures no deal slips
+            <br />
+            through your fingers. Record desired items, mark them as found or
+            bought, and keep your fortune in check.
+          </p>
+        </div>
+      </section>
       <main>
         <form onSubmit={createShoppingListHandler}>
-          <h2>Shopping Scroll</h2>
+          <h2>Traveler Scroll</h2>
           <label>Item Name</label>
           <input type="text" name="itemName" required />
           <br />
@@ -78,7 +96,7 @@ function App() {
         </form>
         <h2>Trade Manifest</h2>
         {}
-        <ul>
+        <ul className="form-render">
           {items.map((item) => (
             <li key={item.id}>
               {item.itemName} — {item.price} gold ({item.status})
