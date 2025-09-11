@@ -32,8 +32,19 @@ function App() {
   };
   const updateShoppingListHandler = async (event) => {
     event.preventDefault();
-    const { price, status } = itemToUpdate;
+    const { itemName, price, status } = itemToUpdate;
     console.log(itemToUpdate.id);
+    await updateItem(
+      "ShoppingList",
+      { id: itemToUpdate.id, itemName: itemToUpdate.name },
+      { itemName, price, status }
+    );
+    fetchedItems((oldItems) => {
+      return oldItems.map((itemObject) => {
+        return itemObject.id === itemToUpdate.id ? itemToUpdate : itemObject;
+      });
+    });
+    setItemToUpdate(null);
   };
   const deleteShoppingListHandler = async (id) => {
     await deleteItem("ShoppingList", { id });
@@ -81,6 +92,43 @@ function App() {
             </li>
           ))}
         </ul>
+        {itemToUpdate && (
+          <div className="update-form">
+            <h2>Update Item</h2>
+            <form onSubmit={updateShoppingListHandler}>
+              <label>Price</label>
+              <input
+                type="number"
+                value={itemToUpdate.price}
+                onChange={(e) =>
+                  setItemToUpdate({
+                    ...itemToUpdate,
+                    price: Number(e.target.value),
+                  })
+                }
+              />
+              <br />
+
+              <label>Status</label>
+              <select
+                value={itemToUpdate.status}
+                onChange={(e) =>
+                  setItemToUpdate({ ...itemToUpdate, status: e.target.value })
+                }
+              >
+                <option value="needed">Needed</option>
+                <option value="found">Found</option>
+                <option value="bought">Bought</option>
+              </select>
+              <br />
+
+              <button type="submit">Save</button>
+              <button type="button" onClick={() => setItemToUpdate(null)}>
+                Cancel
+              </button>
+            </form>
+          </div>
+        )}
       </main>
       <footer>
         <p>&copy; 2025 Dawnstar Dealers. All Rights Reserved.</p>
