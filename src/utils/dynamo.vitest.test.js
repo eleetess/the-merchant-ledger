@@ -7,7 +7,7 @@ import {
   DeleteCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { describe, it, expect, beforeEach } from "vitest";
-import { createItem, listAllItems } from "./dynamo";
+import { createItem, listAllItems, updateItem, deleteItem } from "./dynamo";
 
 const ddbMock = mockClient(DynamoDBDocumentClient);
 
@@ -44,4 +44,28 @@ describe("CRUD unit tests with mock", () => {
   });
 
   // write more tests here
+
+  it("updateItem returns the updated item", async () => {
+    const updatedItem = { id: "1", username: "batman99" };
+
+    ddbMock.on(UpdateCommand).resolves({ Attributes: updatedItem });
+
+    const output = await updateItem(
+      "Test",
+      { id: "1" },
+      { username: "batman99" }
+    );
+
+    expect(output).toEqual(updatedItem);
+  });
+
+  it("deleteItem returns the deleted item", async () => {
+    const deletedItem = { id: "1" };
+
+    ddbMock.on(DeleteCommand).resolves({ Attributes: deletedItem });
+
+    const output = await deleteItem("Test", { id: "1" });
+
+    expect(output).toEqual(deletedItem);
+  });
 });
