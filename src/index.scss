@@ -9,7 +9,7 @@ $color-text-muted: #9a9a9a;
 
 
 .hero {
-  background-image: url("https://eso-hub.com/images/interactive-map/header-image.jpg"); /* swap with ESO wallpaper */
+  background-image: url("https://eso-hub.com/images/interactive-map/header-image.jpg"); 
   background-size: cover;
   background-position: center;
   min-height: 40vh;
@@ -17,7 +17,7 @@ $color-text-muted: #9a9a9a;
   align-items: center;
   justify-content: center;
   text-align: center;
-  
+  font-size: large;
   color: #8a0883;
   font-family: "Pirata One", system-ui;
   border-radius: 100px;
@@ -53,11 +53,23 @@ h1 {
 }
 
 h2 {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid $color-accent-gold;
+  border-radius: 12px;
+  max-width: 500px;
   color: #05520c;
   font-family: "Pirata One", system-ui;
   font-weight: 400;
   font-size: clamp(1.2rem, 4vw, 2rem);
   text-align: center;
+  margin: auto;
+
+}
+h3{
+  color: #05520c;
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
 ul {
@@ -91,7 +103,7 @@ form {
   border-radius: 12px;
   padding: 40px;
   color:purple;
-  font-size: x-large;
+  font-size: large;
   font-weight: bolder;
   max-width: 500px;
   background-position: center;

@@ -6,6 +6,8 @@ import {
   updateItem,
   deleteItem,
 } from "./utils/dynamo";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 function App() {
   const [items, fetchedItems] = useState([]);
@@ -100,11 +102,15 @@ function App() {
           {items.map((item) => (
             <li key={item.id}>
               {item.itemName} — {item.price} gold ({item.status})
-              <button onClick={() => setItemToUpdate(item)}>Edit</button>
+              <button onClick={() => setItemToUpdate(item)}>
+                <EditIcon style={{ marginRight: "4px" }} />
+                Edit
+              </button>
               <button
                 className="beGone"
                 onClick={() => deleteShoppingListHandler(item.id)}
               >
+                <DeleteIcon style={{ marginRight: "4px" }} />
                 Remove
               </button>
             </li>
@@ -112,7 +118,7 @@ function App() {
         </ul>
         {itemToUpdate && (
           <div className="update-form">
-            <h2>Update Item</h2>
+            <h3>Update Item</h3>
             <form onSubmit={updateShoppingListHandler}>
               <label>Price</label>
               <input

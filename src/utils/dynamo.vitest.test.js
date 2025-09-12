@@ -3,6 +3,8 @@ import {
   DynamoDBDocumentClient,
   PutCommand,
   ScanCommand,
+  UpdateCommand,
+  DeleteCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { describe, it, expect, beforeEach } from "vitest";
 import { createItem, listAllItems } from "./dynamo";
