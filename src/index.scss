@@ -50,6 +50,11 @@ h1 {
   font-weight: 700;
   font-size: clamp(2rem, 6vw, 3.5rem);
   text-align: center;
+   background: rgba(255, 255, 255, 0.05);
+  border: 2px solid $color-accent-gold;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
 }
 
 h2 {
@@ -124,6 +129,11 @@ form {
   margin: 20px auto;
   border: 2px solid $color-accent-gold;
   border-radius: 12px;
+  position:fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+
 }
 
 button {

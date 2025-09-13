@@ -119,6 +119,7 @@ function App() {
         {itemToUpdate && (
           <div className="update-form">
             <h3>Update Item</h3>
+            <p>{itemToUpdate.itemName}</p>
             <form onSubmit={updateShoppingListHandler}>
               <label>Price</label>
               <input
