@@ -40,3 +40,15 @@
 - READ- get items from the table
 - UPDATE- update status (needed,found,bought)
 - DELETE- remove item from list.
+
+ # Front end Capstone plan
+ Frontend interface for The Merchant Ledger – an Elder Scrolls Online–themed app for managing trader shopping lists.
+
+## Overview
+Built with React and Tailwind CSS. Deployed via Vercel.
+Integrates with AWS Cognito for authentication and Lambda API for backend operations.
+
+### Tech Stack
+React • Tailwind CSS  • React Router • 
+
+
